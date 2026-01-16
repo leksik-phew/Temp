@@ -44,3 +44,22 @@ stream = client.chat.completions.create(
 for chunk in stream:
     if chunk.choices[0].delta.content:
         print(chunk.choices[0].delta.content, end="")
+
+
+
+
+##1111a1
+from perplexity import Perplexity
+
+client = Perplexity()
+
+search = client.search.create(
+    query=[
+      "What is Comet Browser?",
+      "Perplexity AI",
+      "Perplexity Changelog"
+    ]
+)
+
+for result in search.results:
+    print(f"{result.title}: {result.url}")
